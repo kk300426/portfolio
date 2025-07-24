@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanal Kannan Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    a:hover {
+      color: #58a6ff !important;
+    }
+
+    li:hover, .projectCard:hover {
+      transform: scale(1.05);
+    }
+
+    .skill-img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.3rem;
+    }
+
+    .desc {
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .project-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React + Babel CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    function App() {
+      const skills = [
+        { name: "Python", img: "https://img.icons8.com/color/48/000000/python--v1.png", desc: "Scripting and automation." },
+        { name: "Java", img: "https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png", desc: "OOP and backend apps." },
+        { name: "C", img: "https://img.icons8.com/color/48/000000/c-programming.png", desc: "Low-level programming." },
+        { name: "C++", img: "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png", desc: "Performance and gaming." },
+        { name: "HTML", img: "https://img.icons8.com/color/48/000000/html-5--v1.png", desc: "Web structure & markup." },
+        { name: "CSS", img: "https://img.icons8.com/color/48/000000/css3.png", desc: "Styling web pages." },
+        { name: "JavaScript", img: "https://img.icons8.com/color/48/000000/javascript--v1.png", desc: "Interactive web apps." },
+        { name: "Bootstrap", img: "https://img.icons8.com/color/48/000000/bootstrap.png", desc: "Responsive design." },
+        { name: "MongoDB", img: "https://img.icons8.com/color/48/000000/mongodb.png", desc: "NoSQL database." },
+        { name: "MySQL", img: "https://img.icons8.com/fluency/48/000000/mysql-logo.png", desc: "Relational database." }
+      ];
+
+      const projects = [
+        {
+          title: "Accounting Web App with Login Page",
+          description: "Secure login with OTP email verification using EmailJS and Firebase.",
+          link: "https://kk300426.github.io/accounting/login.html",
+          img: "account.png"
+        }
+      ];
+
+      return (
+        <>
+          <header style={styles.header}>
+            <nav style={styles.nav}>
+              <a href="#home" style={styles.navLink}>Home</a>
+              <a href="#about" style={styles.navLink}>About</a>
+              <a href="#education" style={styles.navLink}>Education</a>
+              <a href="#skills" style={styles.navLink}>Skills</a>
+              <a href="#projects" style={styles.navLink}>Projects</a>
+              <a href="#contact" style={styles.navLink}>Contact</a>
+            </nav>
+          </header>
+
+          <section id="home" style={styles.homeSection}>
+            <h1 style={styles.heading}>Hello, I'm Kanal Kannan</h1>
+            <p style={styles.subText}>BCA Student passionate about coding and development.</p>
+          </section>
+
+          <section id="about" style={styles.aboutSection}>
+            <h2>About Me</h2>
+            <p>
+              I am currently pursuing a Bachelor of Computer Applications (BCA),
+               where I am gaining a strong foundation in computer science, software development,
+                and modern web technologies.
+                I have hands-on experience with multiple programming languages and frameworks,
+                 and I enjoy applying my skills to build creative,
+                  functional, and user-friendly projects.
+                 My passion lies in continuous learning,
+                  solving real-world problems through code,
+                   and exploring the ever-evolving world of technology.
+            </p>
+            <a href="Kanal-Kannan-Resume.pdf" download style={styles.resumeBtn}>
+            📄 Download Resume
+            </a>
+
+          </section>
+
+         <section id="education" style={styles.educationSection}>
+            <h2>Education</h2>
+            <p>BCA,PERI College Of Arts and Science-2026</p>
+          </section>
+          
+          <section id="certification" style={styles.certificationSection}>
+            <h2>Certification</h2>
+            <p>Diploma in Full Stack Development,
+              CSC Computer Education-2025</p>
+          </section>
+
+          <section id="skills" style={styles.skillsSection}>
+            <h2>My Skills</h2>
+            <ul style={styles.skillList}>
+              {skills.map((skill) => (
+                <li key={skill.name} style={styles.skillItem}>
+                  <img src={skill.img} alt={skill.name} className="skill-img" />
+                  <div>{skill.name}</div>
+                  <div className="desc">{skill.desc}</div>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="projects" style={styles.projectSection}>
+            <h2>My Projects</h2>
+            <div style={styles.projectList}>
+              {projects.map((project, index) => (
+                <div key={index} style={styles.projectCard}>
+                  <img src={project.img} alt={project.title} className="project-img" />
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" style={styles.projectLink}>
+                    🔗 View Project
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="contact" style={styles.contactSection}>
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:9894297103s@gmail.com" style={styles.link}>9894297103s@gmail.com</a></p>
+            <p>Phone: <span style={styles.phone}>+91-8122826049</span></p>
+            <div style={{ marginTop: "1rem", display: "flex", justifyContent: "center", gap: "1.5rem" }}>
+  <a href="https://share.google/rBJJZLy7ZLp1V7Xys" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-glyphs/40/000000/github.png" alt="GitHub" />
+  </a>
+  <a href="https://www.linkedin.com/in/kanal-kannan-32a11231b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-filled/40/0077b5/linkedin.png" alt="LinkedIn" />
+  </a>
+</div>
+
+          </section>
+
+          <footer style={styles.footer}>
+            <p>© 2025 Kanal Kannan</p>
+          </footer>
+        </>
+      );
+    }
+
+    const styles = {
+      header: {
+        backgroundColor: "#24292e",
+        padding: "1rem",
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+      },
+      nav: {
+        display: "flex",
+        justifyContent: "center",
+        gap: "2rem",
+        flexWrap: "wrap",
+      },
+      navLink: {
+        color: "#fff",
+        textDecoration: "none",
+        fontWeight: "bold",
+        fontSize: "1.1rem",
+        transition: "color 0.3s",
+        cursor: "pointer",
+      },
+      homeSection: {
+        height: "100vh",
+        background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
+        color: "#c9d1d9",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        padding: "0 1rem",
+      },
+      heading: {
+        fontSize: "2.5rem",
+        marginBottom: "1rem",
+      },
+      subText: {
+        fontSize: "1.2rem",
+        maxWidth: "600px",
+      },
+      aboutSection: {
+        padding: "10rem 10rem",
+        maxWidth: "800px",
+        margin: "0 auto",
+        textAlign: "center",
+      },
+      educationSection: {
+        backgroundColor: "#ebedf0",
+        color: "#0a0000",
+        borderRadius: "0.5rem",
+        fontWeight: "bold",
+        textAlign: "center",
+        transition: "transform 0.3s",
+        maxWidth: "500px",
+        margin: "2rem auto",
+        padding: "2rem"
+      },
+
+      certificationSection: {
+        backgroundColor: "#ebedf0",
+        color: "#0a0000",
+        borderRadius: "0.5rem",
+        fontWeight: "bold",
+        textAlign: "center",
+        transition: "transform 0.3s",
+        maxWidth: "500px",
+        margin: "2rem auto",
+        padding: "2rem"
+      },
+      skillsSection: {
+        padding: "5rem 1rem",
+        textAlign: "center",
+      },
+      skillList: {
+        listStyleType: "none",
+        padding: 0,
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "1.5rem",
+        marginTop: "1rem",
+      },
+      skillItem: {
+        backgroundColor: "#ebedf0",
+        color: "#0a0000",
+        padding: "1rem",
+        borderRadius: "0.5rem",
+        fontWeight: "bold",
+        width: "120px",
+        textAlign: "center",
+        transition: "transform 0.3s",
+      },
+      projectSection: {
+        padding: "5rem 1rem",
+        backgroundColor: "#ffffff",
+        textAlign: "center",
+      },
+      projectList: {
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+        gap: "2rem",
+        maxWidth: "1000px",
+        margin: "2rem auto",
+      },
+
+      projectCard: {
+        border: "1px solid #ddd",
+        padding: "1.5rem",
+        borderRadius: "0.5rem",
+        width: "100%",
+        backgroundColor: "#f8f9fa",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.05)",
+        transition: "transform 0.3s",
+      },
+      projectLink: {
+        display: "inline-block",
+        marginTop: "1rem",
+        textDecoration: "none",
+        color: "#0366d6",
+        fontWeight: "bold",
+      },
+      contactSection: {
+        padding: "5rem 1rem",
+        maxWidth: "600px",
+        margin: "0 auto",
+        textAlign: "center",
+      },
+      link: {
+        color: "#58a6ff",
+        textDecoration: "none",
+        fontWeight: "bold",
+      },
+      phone: {
+        fontWeight: "bold",
+        color: "#0366d6",
+      },
+      footer: {
+        backgroundColor: "#24292e",
+        color: "#fff",
+        textAlign: "center",
+        padding: "1rem",
+      },
+      resumeBtn: {
+  display: "inline-block",
+  marginTop: "1rem",
+  padding: "0.7rem 1.5rem",
+  backgroundColor: "#58a6ff",
+  color: "#fff",
+  textDecoration: "none",
+  borderRadius: "8px",
+  fontWeight: "bold",
+  transition: "background-color 0.3s",
+},
+
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
