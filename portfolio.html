@@ -40,12 +40,48 @@
       border-radius: 10px;
       margin-bottom: 1rem;
     }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem !important;
+      }
+      h2 {
+        font-size: 1.5rem !important;
+      }
+      p, .desc {
+        font-size: 1rem !important;
+      }
+      .project-img {
+        max-height: 150px;
+      }
+      .skill-img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem !important;
+      }
+      h2 {
+        font-size: 1.2rem !important;
+      }
+      p, .desc {
+        font-size: 0.9rem !important;
+      }
+      .aboutSection {
+        padding: 2rem 1rem !important;
+      }
+      .skillItem {
+        width: 90px !important;
+      }
+    }
   </style>
 </head>
 <body>
   <div id="root"></div>
 
-  <!-- React + Babel CDN -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -96,30 +132,26 @@
             <h2>About Me</h2>
             <p>
               I am currently pursuing a Bachelor of Computer Applications (BCA),
-               where I am gaining a strong foundation in computer science, software development,
-                and modern web technologies.
-                I have hands-on experience with multiple programming languages and frameworks,
-                 and I enjoy applying my skills to build creative,
-                  functional, and user-friendly projects.
-                 My passion lies in continuous learning,
-                  solving real-world problems through code,
-                   and exploring the ever-evolving world of technology.
+              where I am gaining a strong foundation in computer science, software development,
+              and modern web technologies.
+              I have hands-on experience with multiple programming languages and frameworks,
+              and I enjoy applying my skills to build creative,
+              functional, and user-friendly projects.
+              My passion lies in continuous learning,
+              solving real-world problems through code,
+              and exploring the ever-evolving world of technology.
             </p>
-            <a href="Kanal-Kannan-Resume.pdf" download style={styles.resumeBtn}>
-            📄 Download Resume
-            </a>
-
+            <a href="Kanal-Kannan-Resume.pdf" download style={styles.resumeBtn}>📄 Download Resume</a>
           </section>
 
-         <section id="education" style={styles.educationSection}>
+          <section id="education" style={styles.educationSection}>
             <h2>Education</h2>
-            <p>BCA,PERI College Of Arts and Science-2026</p>
+            <p>BCA, PERI College Of Arts and Science - 2026</p>
           </section>
-          
+
           <section id="certification" style={styles.certificationSection}>
             <h2>Certification</h2>
-            <p>Diploma in Full Stack Development,
-              CSC Computer Education-2025</p>
+            <p>Diploma in Full Stack Development, CSC Computer Education - 2025</p>
           </section>
 
           <section id="skills" style={styles.skillsSection}>
@@ -156,14 +188,13 @@
             <p>Email: <a href="mailto:9894297103s@gmail.com" style={styles.link}>9894297103s@gmail.com</a></p>
             <p>Phone: <span style={styles.phone}>+91-8122826049</span></p>
             <div style={{ marginTop: "1rem", display: "flex", justifyContent: "center", gap: "1.5rem" }}>
-  <a href="https://share.google/rBJJZLy7ZLp1V7Xys" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.icons8.com/ios-glyphs/40/000000/github.png" alt="GitHub" />
-  </a>
-  <a href="https://www.linkedin.com/in/kanal-kannan-32a11231b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.icons8.com/ios-filled/40/0077b5/linkedin.png" alt="LinkedIn" />
-  </a>
-</div>
-
+              <a href="https://share.google/rBJJZLy7ZLp1V7Xys" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/ios-glyphs/40/000000/github.png" alt="GitHub" />
+              </a>
+              <a href="https://www.linkedin.com/in/kanal-kannan-32a11231b" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/ios-filled/40/0077b5/linkedin.png" alt="LinkedIn" />
+              </a>
+            </div>
           </section>
 
           <footer style={styles.footer}>
@@ -207,15 +238,15 @@
         padding: "0 1rem",
       },
       heading: {
-        fontSize: "2.5rem",
+        fontSize: "clamp(1.8rem, 5vw, 2.5rem)",
         marginBottom: "1rem",
       },
       subText: {
-        fontSize: "1.2rem",
+        fontSize: "clamp(1rem, 3vw, 1.2rem)",
         maxWidth: "600px",
       },
       aboutSection: {
-        padding: "10rem 10rem",
+        padding: "4rem 1rem",
         maxWidth: "800px",
         margin: "0 auto",
         textAlign: "center",
@@ -231,7 +262,6 @@
         margin: "2rem auto",
         padding: "2rem"
       },
-
       certificationSection: {
         backgroundColor: "#ebedf0",
         color: "#0a0000",
@@ -244,7 +274,7 @@
         padding: "2rem"
       },
       skillsSection: {
-        padding: "5rem 1rem",
+        padding: "3rem 1rem",
         textAlign: "center",
       },
       skillList: {
@@ -267,7 +297,7 @@
         transition: "transform 0.3s",
       },
       projectSection: {
-        padding: "5rem 1rem",
+        padding: "3rem 1rem",
         backgroundColor: "#ffffff",
         textAlign: "center",
       },
@@ -278,7 +308,6 @@
         maxWidth: "1000px",
         margin: "2rem auto",
       },
-
       projectCard: {
         border: "1px solid #ddd",
         padding: "1.5rem",
@@ -296,7 +325,7 @@
         fontWeight: "bold",
       },
       contactSection: {
-        padding: "5rem 1rem",
+        padding: "3rem 1rem",
         maxWidth: "600px",
         margin: "0 auto",
         textAlign: "center",
@@ -317,17 +346,16 @@
         padding: "1rem",
       },
       resumeBtn: {
-  display: "inline-block",
-  marginTop: "1rem",
-  padding: "0.7rem 1.5rem",
-  backgroundColor: "#58a6ff",
-  color: "#fff",
-  textDecoration: "none",
-  borderRadius: "8px",
-  fontWeight: "bold",
-  transition: "background-color 0.3s",
-},
-
+        display: "inline-block",
+        marginTop: "1rem",
+        padding: "0.7rem 1.5rem",
+        backgroundColor: "#58a6ff",
+        color: "#fff",
+        textDecoration: "none",
+        borderRadius: "8px",
+        fontWeight: "bold",
+        transition: "background-color 0.3s",
+      },
     };
 
     const root = ReactDOM.createRoot(document.getElementById('root'));
